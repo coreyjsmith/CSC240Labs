@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Dice Game</title>
+    </head>
+    <body>
+        <h1>Dice Game</h1>
+        <hr>
+        <div id="dispWinner"></div>
+        <div id="buttomContinue"><button onclick="playGame()">Play</button></div>
+        <script>
+            var playerPoints = 0;
+            var computerPoints = 0;
+            function playGame() {
+                rollDice();
+                var buttonContinueSel = document.getElementById('buttomContinue');
+                buttonContinueSel.innerHTML = "<button onclick='playGame()'>Continue</button> <button onclick='quitGame()'>Quit</button>";
+                if(playerPoints >= 100 || computerPoints >= 100) {
+                    buttonContinueSel.innerHTML = "Game Ends";
+                    if(playerPoints > computerPoints) {
+                        buttonContinueSel.innerHTML += "<br><h3>Player Wins! </h3>";
+                    } else if(playerPoints < computerPoints) {
+                        buttonContinueSel.innerHTML += "<br><h3>Computer Wins!</h3>";
+                    } else {
+                        buttonContinueSel.innerHTML += "<br><h3>Tie </h3>";
+                    }
+                }
+            }
+            function quitGame() {
+                var buttonContinueSel = document.getElementById('buttomContinue');
+                buttonContinueSel.innerHTML = "Game Ends";
+            }
+            function rollDice() {
+                var pl1 = Math.floor(Math.random() * 6) + 1;
+                var pl2 = Math.floor(Math.random() * 6) + 1;
+                var cp1 = Math.floor(Math.random() * 6) + 1;
+                var cp2 = Math.floor(Math.random() * 6) + 1;
+                var player_total = pl1 + pl2;
+                var computer_total = cp1 + cp2;
+                var divReq = document.getElementById('dispWinner');
+                if(player_total > computer_total) {
+                    if(pl1 == pl2) {
+                        playerPoints = playerPoints +  2 * (pl1+pl2);
+                    } else {
+                        playerPoints = playerPoints + (pl1+pl2);
+                    }
+                    divReq.innerHTML = "Player wins round";
+                } else if (player_total < computer_total) {
+                    if(cp1 == cp2) {
+                        computerPoints = computerPoints + 2 * (cp1+cp2);
+                    } else {
+                        computerPoints = computerPoints + (cp1+cp2);
+                    }
+                    divReq.innerHTML = "Computer wins round" ;
+                }
+                divReq.innerHTML = divReq.innerHTML + "<br> Computer Points : " + computerPoints + "<br> Your Points : " + playerPoints + "<br/>" ; 
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<title>Sign In Registration</title>
+
+
+
+</head>
+
+<body onload='document.form1.text1.focus()'>
+<div class="formsignup">
+<form name="form1" action="#" >
+<ul>
+
+<li><label for="fname">First name : </label>
+  <input type="text" id="fname" name="fname"></li><br><br>
+<li>  <label for="lname">Last name    :</label>
+  <input type="text" id="lname" name="lname"></li><br><br>
+<li>  <label for="saddress">Street Address:</label>
+  <input type="text" id="saddress" name="saddress"></li><br><br>
+ <li> <label for="city">City:</label>
+  <input type="text" id="city" name="city"></li><br><br>
+  <li><label for="zipcode">Zipcode:</label>
+  <input type="text" id="zipcode" name="zipcode"></li><br><br>
+<li><label for="email">Email Address:</label>
+ <input type="email" id="email" name="email"></li><br><br>
+  
+
+
+
+<li>Phone Number : <input type='text' name='text1'/></li>
+<br><br>
+
+
+<li>UserName : <input type="text" id="username" name="username" minlength="4" maxlength="20" required><br><br>
+<li>Password : <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[!@#$])(?=.*[a-z])(?=.*[A-Z]).{4,12}"   title="Must contain at least one number and one uppercase and lowercase and one special character from this list[!@#$], and be between 4 and 20 characters."><br><br>
+ 
+
+<li class="submit"><input type="submit" name="submit" value="Submit" onclick="phonenumber(document.form1.text1)"/></li>
+
+</ul>
+</form>
+<script>
+
+function phonenumber(inputtxt)
+{
+  var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if(inputtxt.value.match(phoneno))
+     { 
+           return true;
+         }
+   else
+     {
+           alert("Not a valid Phone Number");
+           return false;
+     }
+var areacode= /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+
+}</script>
+
+
+
+</div>
+
+
+
+</body>
+</html>

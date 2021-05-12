@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UserName</title>
+
+</head>
+
+<body>
+
+    Enter First Name :
+
+    <input type="text" id="txtFirstName" />
+
+    <br><br>
+
+    Enter Last Name :
+
+    <input type="text" id="txtLastName" />
+
+    <br><br>
+
+    Enter School's Name :
+
+    <input type="text" id="txtSchoolName" />
+
+    <br><br>
+
+    <input type="button" value="Create Username" onclick="userName()" />
+
+    <br><br>
+
+   <div id="username"></div>
+
+    <script>
+
+        function userName() {
+
+            var firstName = document.getElementById("txtFirstName").value;
+
+            var lastName = document.getElementById("txtLastName").value;
+
+            var schoolName = document.getElementById("txtSchoolName").value;
+
+            var username = firstName.charAt(0) + lastName.charAt(0) + schoolName.split(" ")[0];
+
+            document.getElementById("username").innerHTML="UserName : " + username;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

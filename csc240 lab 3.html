@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Your Grade</title>
+</head>
+<body>
+<h1>
+Grade Converter
+</h1>
+    <label >Enter grade :</label>
+    <input type="text" id="avg">
+    <button onclick="grade()">Calculate Grade</button>
+    <p id="g"></p>
+    <script>
+        function grade()
+        {
+             var  x=document.getElementById("avg").value;
+            if(x>89.5)
+            {
+                document.getElementById("g").innerHTML="Your Grade is an A";
+            }
+			
+			else if(x<89.5 && x>79.6)
+            {
+                document.getElementById("g").innerHTML="Your Grade is a B";
+            }
+			
+			else if(x<79.5 && x>69.6)
+            {
+                document.getElementById("g").innerHTML="Your Grade is a C";
+            }
+			
+			else if(x<60 && x>69.5)
+            {
+                document.getElementById("g").innerHTML="Your Grade is a D";
+            }
+			
+			else{
+                document.getElementById("g").innerHTML="Your Grade is an F";
+            }
+     
+        }
+    </script>
+</body>
+</html>

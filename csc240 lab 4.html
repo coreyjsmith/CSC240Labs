@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />   
+<script type="text/javascript">
+var timeleft = 10;
+function myFunction()
+{
+var Timer = setInterval(function(){
+timeleft--;
+if(timeleft>0)
+{
+document.getElementById("countdowntimer").textContent = timeleft;
+}
+else
+{
+document.getElementById("countdowntimer").textContent = "BLASTOFF!";
+result = fontsize(40);
+}
+  
+if(timeleft <= 0)
+clearInterval(Timer);
+},1000);
+}
+</script>
+</head>
+<body>
+<h1> Countdown to Launch!</h1></br>
+<button onclick="myFunction()">Count Down</button></br>
+<p> <span id="countdowntimer"></span></p>
+  
+
+</body>
+</html>

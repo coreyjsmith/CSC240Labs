@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Soccer League Entries</title>
+</head>
+<body >
+       <input type="number" id="age" />
+       <input type="button" onclick="handleregister()" value="Register">
+   <br>
+   Number of Students:<p id="total">0</p>
+   Number of Juniors<p id="junior">0</p>
+   Number of Intermediates<p id="intermediate">0</p>
+   Number of Seniors<p id="senior">0</p>
+
+   <script>
+       function handleregister() {
+           var count=0;
+           var age =document.getElementById('age').value;
+           var total=parseInt(document.getElementById("total").innerHTML);
+           
+           if(age>=4 && age<=7)
+           {
+               var value=parseInt(document.getElementById("junior").innerHTML);
+               count+=1;
+               document.getElementById("junior").innerHTML = value+1;
+
+           }
+           if(age>=8 && age<=11)
+           {
+               var value=parseInt(document.getElementById("intermediate").innerHTML);
+               count+=1;
+               document.getElementById("intermediate").innerHTML = value+1;
+           }
+           if(age>=12 && age<=15)
+           {
+               var value=parseInt(document.getElementById("senior").innerHTML);
+               count+=1;
+               document.getElementById("senior").innerHTML = value+1;
+           }
+               document.getElementById("total").innerHTML = total+count;
+
+
+       }
+   </script>
+
+</body>
+</html>
